@@ -1,0 +1,34 @@
+diff --git a/configure b/configure
+index b325075..0d3cdd1 100755
+--- a/configure
++++ b/configure
+@@ -2678,6 +2678,7 @@ printf "%s\n" "$tcl_cv_sys_version" >&6; }
+ 
+     case $system in
+ 	HP-UX-*) INSTALL_LIBRARY='${INSTALL} -m 755' ;;
++	OS/390-*) INSTALL_LIBRARY='${INSTALL} -m 755' ;;
+ 	      *) INSTALL_LIBRARY='${INSTALL} -m 644' ;;
+     esac
+ 
+@@ -7767,8 +7768,11 @@ fi
+ 	    ;;
+ 	OS/390-*)
+ 	    CFLAGS_OPTIMIZE=""		# Optimizer is buggy
++	    SHLIB_LD='${CC} -shared'
++	    SHLIB_SUFFIX=".so"
++	    SHLIB_CFLAGS="-fvisibility=default"
+ 
+-printf "%s\n" "#define _OE_SOCKETS 1" >>confdefs.h
++printf "%s\n" "#define _XOPEN_SOURCE 600" >>confdefs.h
+ 
+ 	    ;;
+ 	OSF1-V*)
+@@ -9622,6 +9626,8 @@ printf "%s\n" "$opensslpkgconfigdir" >&6; }
+ 		fi
+ 	fi
+ 
++	TCLTLS_SSL_LIBS="$SSL_LIBS_PATH -lssl -lcrypto"
++
+ 
+ 
+ 
