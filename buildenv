@@ -72,9 +72,10 @@ zopen_get_version()
 ###
 
 zopen_append_to_env() {
-cat <<ZZ
-export TCLLIBPATH="\$TCLLIBPATH $PWD/lib/"
-ZZ
+cat <<EOF
+export TCLLIBPATH="\$TCLLIBPATH \${PWD}/lib/"
+
+EOF
 }
 
 #zopen_append_to_setup(){
