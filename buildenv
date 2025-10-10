@@ -15,7 +15,7 @@
 export ZOPEN_BUILD_LINE="DEV"
 
 ## Required IF ZOPEN_BUILD_LINE='STABLE'
-export ZOPEN_DEV_URL="https://core.tcl-lang.org/tcltls/tarball/e03e54ee87/tcltls-e03e54ee87.tar.gz"  # Specify the stable build URL (either git or tarball)
+export ZOPEN_DEV_URL="https://deb.debian.org/debian/pool/main/t/tcltls/tcltls_1.8.0.orig.tar.gz"  # Specify the stable build URL (either git or tarball)
 export ZOPEN_DEV_DEPS="make zoslib tcl pkgconfig openssl" # Specify the stable build dependencies.
 
 ## Specify a space-delimited list of applicable categories.
